@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>here is the voice</title>
+</head>
+<body>
+<audio controls>
+    <source src="wanan.m4a" type="audio/mpeg">
+</audio><br>
+<audio controls>
+    <source src="1.m4a" type="audio/mpeg">
+</audio><br>
+<audio controls>
+    <source src="2.m4a" type="audio/mpeg">
+</audio><br>
+<audio controls>
+    <source src="3.m4a" type="audio/mpeg">
+</audio><br>
+<audio controls>
+    <source src="4.m4a" type="audio/mpeg">
+</audio><br>
+<label>Guess whether I guess or not?</label><br>
+<input id="password"><br>
+<button onclick="myFunction()">easter egg</button>
+<script>
+    function myFunction() {
+
+        if(document.getElementById("password").value=="********")
+            {
+                window.location.href='egg.html';
+            }
+
+        else
+        {
+            alert("not this~");
+        }
+
+
+    }
+</script>
+</body>
+</html>
