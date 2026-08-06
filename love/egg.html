@@ -58,9 +58,9 @@
 				<span class="space"/>聂鲁达深沉，<br />
 				<span class="space"/><span class="space"/>他说<br />
 				<span class="space"/><span class="space"/>在我荒瘠的土地上，你是最后的玫瑰<br /></span>
-				<span class="keyword">平生不会相思<br />
-				<span class="space"/>才会相思<br />
-				<span class="space"/>便害相思<br />
+				<span class="keyword">情不知所起<br />
+				<span class="space"/>一往而深<br />
+				<span class="space"/>生者可以死，死可以生<br />
 				</span>
 			</div>
 
@@ -72,7 +72,7 @@
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						Love u forever and ever.<br/>
+						Through every spring, with you.<br/>
 						<div class="signature">- ZRX</div>
 					</div>
 				</div>
@@ -85,12 +85,8 @@
 <script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(1999, 12, 7);//这里改年月日
-		together.setHours(0);
-		together.setMinutes(0);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
+		// 起始时间：2026-08-01 00:00:00（用 ISO 字符串，避免 setFullYear 的 monthIndex 从 0 开始的坑）
+		var together = new Date('2026-08-01T00:00:00');
 
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
