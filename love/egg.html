@@ -28,6 +28,56 @@
 
     <script type="text/javascript" src="js/functions.js"></script>
 
+	<!-- 书信排版覆盖样式 -->
+	<style type="text/css">
+		#code.letter {
+			height: auto;
+			max-height: 620px;
+			overflow-y: auto;
+			margin-top: -6px;
+			padding-right: 10px;
+			line-height: 2;
+		}
+		#code.letter::-webkit-scrollbar { width: 4px; }
+		#code.letter::-webkit-scrollbar-track { background: transparent; }
+		#code.letter::-webkit-scrollbar-thumb { background: rgba(196, 69, 105, 0.35); border-radius: 2px; }
+		#code.letter p {
+			margin: 0 0 1.1em 0;
+			text-indent: 2em; /* 首行缩进 */
+			color: #f3e9f0; /* 浅色，适配深紫背景，保证清晰 */
+			font-size: 15px;
+			font-family: "KaiTi", "STKaiti", "楷体", "PingFang SC", "Microsoft YaHei", serif;
+			letter-spacing: 0.4px;
+			text-align: justify;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+			opacity: 0;
+			animation: letter-fade 1s ease forwards;
+		}
+		#code.letter p:nth-child(1) { animation-delay: 1.0s; }
+		#code.letter p:nth-child(2) { animation-delay: 1.7s; }
+		#code.letter p:nth-child(3) { animation-delay: 2.4s; }
+		#code.letter p:nth-child(4) { animation-delay: 3.1s; }
+		#code.letter p:nth-child(5) { animation-delay: 3.8s; }
+		@keyframes letter-fade {
+			0% { opacity: 0; transform: translateY(16px); }
+			100% { opacity: 1; transform: translateY(0); }
+		}
+		#code.letter p.dear {
+			text-align: right;
+			text-indent: 0;
+			color: #ff9eb5;
+		}
+		/* 强制文字与爱心始终左右并排，防止窄屏时换行成上下堆叠 */
+		#content {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: flex-start;
+			width: max-content;
+		}
+		#content #loveHeart { flex: 0 0 auto; }
+		#content #code { flex: 0 0 auto; }
+	</style>
+
 </head>
 
 
@@ -40,28 +90,12 @@
 
 	<div id="content">
 
-		<div id="code">
-				<span class="comments">我需要的不多</span><br />
-				<span class="space"/><span class="comments">空气，阳光，星星和你</span><br />
-				<span class="comments">我需要的不多</span><br />
-				<span class="space"/><span class="comments">一缕微风，夜晚星宿，人间骄阳还有你的微笑</span><br />
-				<span class="comments">我需要的不多</span><br />
-				<span class="space"/><span class="comments">朗日星空下一缕微风，古老遥远夜晚星宿</span><br />
-				<span class="space"/><span class="comments">此刻人间骄阳正好，还有你嘴角那一抹微笑</span><br />
-				<span class="keyword_1"><span/>文人墨客们说过太多情话<br />
-				<span class="space"/>李益深情，<br />
-				<span class="space"/><span class="space"/>从此无心爱良夜，任他明月下西楼<br />
-				<span class="space"/>唐寅俏皮，<br />
-				<span class="space"/><span class="space"/>晓看天色暮看云，行也思君，坐也思君<br />
-				<span class="space"/>诗经坦荡，<br />
-				<span class="space"/><span class="space"/>即见君子，云胡不喜<br />
-				<span class="space"/>聂鲁达深沉，<br />
-				<span class="space"/><span class="space"/>他说<br />
-				<span class="space"/><span class="space"/>在我荒瘠的土地上，你是最后的玫瑰<br /></span>
-				<span class="keyword">情不知所起<br />
-				<span class="space"/>一往而深<br />
-				<span class="space"/>生者可以死，死可以生<br />
-				</span>
+		<div id="code" class="letter">
+				<p>但凡少一个契机，我们都不会有交集。如果不是你恰好想接触新人，如果不是我恰好休假，如果没划到我，如果我没加你微信，如果你没有给我发那片天空……</p>
+				<p>人海那么辽阔，天南地北的人，本就该各自生活，是恰好的时间，恰好的境遇，恰好的一念之间，把毫无关系的两个人，牵到了一起。</p>
+				<p>我想在这里描述我对你心动的点，但此时才惊觉，脑子里出现的不是一两个词，而是你整个人，就那么站在那里，一颦一笑，一举一动，一言一行都让我心动，不是某个特质，是你的全部，你连指尖都泛出好看的颜色。</p>
+				<p>说起我们的初见，我们不说见色起意，我们说，这张脸好像写的很好的第一章，使人想看下去。</p>
+				<p>说起我们的以后，你愿意，和我一起去看看吗？可能有时候我词不达意，但是遇见你我真的很开心！不知道什么时候你会再次打开这封信，所以亲爱的，早安，午安，晚安～～</p>
 			</div>
 
 		<div id="loveHeart">
@@ -108,7 +142,7 @@
 			}, 500);
 
 			adjustCodePosition();
-			$("#code").typewriter();
+			// $("#code").typewriter(); // 长信不逐字打印，改为直接展示
 		}
 	</script>
 
